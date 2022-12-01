@@ -27,4 +27,18 @@ public class BrokenLine implements GetLengthable{
         return String.format("Линия %s", points.toString());
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        BrokenLine brokenLine = (BrokenLine) obj;
+        if (this.points.size() != brokenLine.points.size()) return false;
+
+        for (int i = 0; i < points.size(); i++) {
+            if (!(this.points.get(i).equals(brokenLine.points.get(i)))) return false;
+        }
+        return true;
+    }
+
 }

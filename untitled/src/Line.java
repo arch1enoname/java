@@ -18,4 +18,16 @@ public class Line implements GetLengthable{
     public String toString() {
         return String.format("Линия от %s, до %s", start, end);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        Line line = (Line) obj;
+        if(!(line.start.equals(line.start) || line.end.equals(line.end))) return false;
+        return true;
+    }
+
+
 }

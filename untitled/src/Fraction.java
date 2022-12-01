@@ -72,4 +72,16 @@ public class Fraction extends Number{
     public double doubleValue() {
         return (double) numerator / (double) denominator;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        Fraction fraction = (Fraction) obj;
+        return this.numerator == fraction.numerator && this.denominator == fraction.denominator;
+
+
+    }
+
 }
