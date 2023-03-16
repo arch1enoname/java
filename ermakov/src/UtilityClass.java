@@ -35,14 +35,6 @@ public class UtilityClass {
 
     }
 
-    static void validate(Object object, Class cls) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Method[] methods = cls.getDeclaredMethods();
-        for (Method method : methods) {
-            method.setAccessible(true);
-            method.invoke(null, object);
-        }
-    }
-
     static <T> T cache(T obj) throws NoSuchFieldException, IllegalAccessException {
 
         Field field = obj.getClass().getDeclaredField("stringField");
